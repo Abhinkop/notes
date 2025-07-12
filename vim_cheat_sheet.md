@@ -127,3 +127,44 @@ set expandtab
 | `:set number`        | Show line numbers               |
 | `:set relativenumber`| Show relative line numbers      |
 | `:noh`               | Clear search highlighting       |
+
+## 🔍 Search
+| Command | Description                              |
+| ------- | ---------------------------------------- |
+| `/word` | Search **forward** for `word`            |
+| `?word` | Search **backward** for `word`           |
+| `n`     | Repeat last search in same direction     |
+| `N`     | Repeat last search in opposite direction |
+| `*`     | Search forward for word under cursor     |
+| `#`     | Search backward for word under cursor    |
+
+## 🔁 Replace
+| Command             | Description                                          |
+| ------------------- | ---------------------------------------------------- |
+| `:s/old/new/`       | Replace first `old` with `new` in **current line**   |
+| `:s/old/new/g`      | Replace **all** `old` with `new` in **current line** |
+| `:%s/old/new/g`     | Replace in **entire file**                           |
+| `:10,20s/old/new/g` | Replace in **lines 10 to 20**                        |
+| `:'<,'>s/old/new/g` | Replace in **selected visual lines**                 |
+| `:%s/old/new/gc`    | **Confirm** each replacement (`y`/`n`/`a`/`q`)       |
+
+### 🧠 Flags
+| Flag | Meaning                                    |
+| ---- | ------------------------------------------ |
+| `g`  | Global — replace all occurrences on a line |
+| `c`  | Confirm each substitution                  |
+| `i`  | Ignore case                                |
+| `I`  | Case sensitive                             |
+
+Eg:
+```bash
+:%s/foo/bar/gi
+```
+Replaces all `foo` with `bar`, ignoring case.
+### 📦 Tips
+- Use `:noh` to clear search highlights.
+- Use `\v` to enable very magic mode for simpler regex:
+```bash
+:%s/\vfunc\(\d+\)/func_call/g
+```
+
