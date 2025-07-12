@@ -54,11 +54,11 @@ Changes `foobar` → `fooqux`
 | `:%s/^\(\d\+\)\s\+\(.*\)/\2 (\1)/` | Reformat lines like `123 abc` → `abc (123)` |
 
 ## 🔹 Tips
-- Use :set hlsearch to highlight matches.
+- Use `:set hlsearch` to highlight matches.
 
-- Use :noh to clear highlights.
+- Use `:noh` to clear highlights.
 
-- Use \v at the start to enable "very magic" mode (regex like in Perl).
+- Use `\v` at the start to enable "very magic" mode (regex like in Perl).
 
 Example:
 ```bash
