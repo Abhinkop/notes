@@ -103,7 +103,7 @@ find . | cpio -o -H newc | gzip > ../initramfs.cpio.gz
 ## 3. Run using qemu
 ### 3.1 Without debugging: 
 ```bash   
-qemu-system-aarch64   -machine virt   -cpu cortex-a57   -m 1G   -kernel arch/arm64/boot/Image   -initrd initramfs.cpio.gz   -append "console=ttyAMA0"   -nographic
+qemu-system-aarch64   -machine virt   -cpu cortex-a57   -m 1G   -kernel arch/arm64/boot/Image   -initrd initramfs.cpio.gz   -append "console=ttyAMA0 nokaslr"   -nographic
 ```   
 
 ### 3.2 With debugging as gdb server: add `-s -S` flags.
