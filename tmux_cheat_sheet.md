@@ -1,6 +1,6 @@
-#Tmux
+# Tmux
 
-##Start a New tmux Session
+## Start a New tmux Session
 ```
 tmux new -s demo
 ```
