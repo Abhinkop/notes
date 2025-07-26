@@ -1,6 +1,6 @@
 # Tmux
 
-## Start a New tmux Session
+## 🏁 Start a New tmux Session
 ```
 tmux new -s demo
 ```
@@ -39,5 +39,43 @@ Ctrl-b then p
 ### List all windows:
 ```
 Ctrl-b then w
+```
+
+## 💾 Detach and Reattach
+### Detach from tmux session:
+```
+Ctrl-b then d
+```
+### List sessions:
+```
+tmux ls
+```
+### Reattach to your session:
+```
+tmux attach -t demo
+```
+
+## 🧹 Kill a Session
+### Kill a session from outside:
+```
+tmux kill-session -t demo
+```
+### Or from inside:
+```
+exit
+```
+
+## 📝 Optional: Customize tmux (~/.tmux.conf)
+### Set prefix to Ctrl-a instead of Ctrl-b
+```
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+# Enable mouse
+set -g mouse on
+```
+Apply changes:
+```
+tmux source-file ~/.tmux.conf
 ```
 
